@@ -1,0 +1,35 @@
+<div class="filters">
+  <mat-form-field>
+    <mat-label>Sort</mat-label>
+    <mat-select
+      panelClass="sort-select"
+      [(ngModel)]="sort"
+      (selectionChange)="searchFanfics(sort)">
+      <mat-option value="id">ID</mat-option>
+      <mat-option value="date">Published</mat-option>
+      <mat-option value="rating">Rating</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="fanfics">
+  <ng-container *ngFor="let fanfic of fanfics">
+  <div class="fanfic" (click) = "openFanficDetails(fanfic.id)">
+    <div class="fanfic-thumb-container">
+      <img
+        *ngIf="fanfic.picUrl"
+        src = {{fanfic.picUrl}}
+        alt="thumbnail"
+        class="fanfic-thumbnail"
+        />
+      <p *ngIf="!fanfic.picUrl">No image</p>
+    </div>
+    <div class = "fanfic-description">
+      <p class = "fanfic-name">{{fanfic.name}}</p>
+      <p class = "fanfic-fandom">{{fanfic.author}}</p>
+      <p class = "fanfic-fandom">{{fanfic.fandom}}</p>
+      <p class = "fanfic-date">{{fanfic.creationDate}}</p>
+    </div>
+  </div>
+  </ng-container>
+</div>
