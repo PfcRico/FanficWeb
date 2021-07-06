@@ -1,2 +1,0 @@
-# FanficWeb
-Website for Fanfics
