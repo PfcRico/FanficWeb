@@ -9,6 +9,7 @@ export interface Fanfic{
   creationDate: string;
   text: string;
   avgRating: number;
+  quantityRatings: number;
 }
 
 export interface APIResponse<T>{
