@@ -1,0 +1,29 @@
+<div class="fanfic-tabs">
+  <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
+    <mat-tab label = "About">
+      <p class="fanfic-tabs-par">
+      Author:
+      <span>{{fanfic.author}}</span>
+      </p>
+      <p class="fanfic-tabs-par">
+        Short Description Here
+        <span>Really interesting story</span>
+      </p>
+      <p class = "fanfic-tabs-votes">
+        <span>
+          <mat-icon class="fanfic-votes-up">thumb_up</mat-icon>
+          <span class = "fanfic-votes-count">{{fanfic.quantityRatings}}</span>
+        </span>
+        <span>
+          <mat-icon class="fanfic-votes-down">thumb_down</mat-icon>
+          <span class = "fanfic-votes-count">14</span>
+        </span>
+      </p>
+      <p class="fanfic-tabs-par">
+        Text:
+        <span>{{fanfic.text}}</span>
+      </p>
+    </mat-tab>
+    <mat-tab label = "Comments"></mat-tab>
+  </mat-tab-group>
+</div>
