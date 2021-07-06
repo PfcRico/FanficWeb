@@ -1,0 +1,35 @@
+<div class = "details">
+  <div class="fanfic-banner">
+    <img
+      class="fanfic-banner-img"
+      src="{{fanfic.picUrl}}"
+      alt="background image"
+      />
+  </div>
+  <div class="fanfic-content">
+    <div class="details-wrapper">
+      <div class="fanfic-header">
+        <h1 class="fanfic-header-title">{{fanfic.name}}</h1>
+        <h2 class="fanfic-header-publish">{{fanfic.creationDate}}</h2>
+      </div>
+      <p class="fanfic-header-genre">
+        <span>{{fanfic.genre}}</span>
+      </p>
+      <p class="fanfic-header-fandom">
+        <span>{{fanfic.fandom}}</span>
+      </p>
+      <div class="fanfic-gauge">
+        <mwl-gauge
+          class="two"
+          [max]="5"
+          [dialStartAngle]="180"
+          [dialEndAngle]="0"
+          [value]="fanficRating"
+          [animated]="true"
+          [color]="getColor"
+          [animationDuration]="2">
+        </mwl-gauge>
+      </div>
+    </div>
+  </div>
+</div>
