@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  BASE_URL: 'http://localhost:9191'
+  BASE_URL: 'https://fanfic-backend.herokuapp.com'
 };
 
 /*
