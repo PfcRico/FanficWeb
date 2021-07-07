@@ -1,6 +1,9 @@
 {
   "name": "fanfic-web",
   "version": "0.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start:prod": "node server.js",
     "ng": "ng",
