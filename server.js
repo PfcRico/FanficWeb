@@ -2,10 +2,10 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.static("./dist/fanfic-web"));
+app.use(express.static("./dist/fanficWeb"));
 
 app.get("/*", function (req, res) {
-  res.sendFile("index.html", { root: "dist/fanfic-web/src/app" });
+  res.sendFile("index.html", { root: "dist/fanficWeb" });
 });
 
 app.listen(process.env.PORT || 8080);
