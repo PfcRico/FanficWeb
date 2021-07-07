@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CloudinaryModule } from '@cloudinary/angular-5.x';
+import * as  Cloudinary from 'cloudinary-core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import {HttpHeadersInterceptor} from "./interceptors/http-headers.interceptor";
 import {HttpErrorsInterceptor} from "./interceptors/http-errors.interceptor";
 import { DetailsComponent } from './components/details/details.component';
 import { FanficTabsComponent } from './components/fanfic-tabs/fanfic-tabs.component';
+import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FanficTabsComponent } from './components/fanfic-tabs/fanfic-tabs.compon
     SearchBarComponent,
     HomeComponent,
     DetailsComponent,
-    FanficTabsComponent
+    FanficTabsComponent,
+    AddFanficComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { FanficTabsComponent } from './components/fanfic-tabs/fanfic-tabs.compon
     MatTabsModule,
     MatIconModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [
   ],
