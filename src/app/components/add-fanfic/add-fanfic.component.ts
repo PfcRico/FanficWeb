@@ -22,8 +22,6 @@ export class AddFanficComponent implements OnInit {
   // @ts-ignore
   picUrl: string;
 
-  declare cloudinary:any
-
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
