@@ -3,6 +3,7 @@ import {HttpService} from "../../services/http.service";
 import {FormControl, NgForm, Validators} from "@angular/forms";
 
 
+
 @Component({
   selector: 'app-add-fanfic',
   templateUrl: './add-fanfic.component.html',
@@ -30,7 +31,6 @@ export class AddFanficComponent implements OnInit {
   }
 
   postData(adding: NgForm) {
-
-    this.httpService.addFanfic(JSON.stringify(adding.value))
+    this.httpService.addFanfic(adding)
   }
 }

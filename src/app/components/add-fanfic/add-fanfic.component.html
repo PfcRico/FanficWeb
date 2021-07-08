@@ -10,31 +10,31 @@
 
     <div class = "form-group">
       <label for="author">Author</label><br>
-      <input #authorAlert="ngModel" required minlength="2" type="text" name="author" class="form-control" ngModel>
+      <input #authorAlert="ngModel" required minlength="2" type="text" name="author" class="form-control" ngModel value="author">
       <div *ngIf = "authorAlert.touched && authorAlert.invalid" class="alert alert-danger">Author is empty or too short</div>
     </div>
 
     <div class = "form-group">
       <label for="genre">Genre</label><br>
-      <input #genreAlert = "ngModel" required minlength="2" type="text" name="genre" class="form-control" ngModel>
+      <input #genreAlert = "ngModel" required minlength="2" type="text" name="genre" class="form-control" ngModel value="genre">
       <div *ngIf = "genreAlert.touched && genreAlert.invalid" class="alert alert-danger">Genre is empty</div>
     </div>
 
     <div class = "form-group">
       <label for="fandom">Fandom</label><br>
-      <input #fandomAlert="ngModel" required minlength="2" type="text" name="fandom" class="form-control" ngModel>
+      <input #fandomAlert="ngModel" required minlength="2" type="text" name="fandom" class="form-control" ngModel value="fandom">
       <div *ngIf = "fandomAlert.touched && fandomAlert.invalid" class="alert alert-danger">Is empty</div>
     </div>
 
     <div class = "form-group">
       <label for="picUrl">Picture URL</label><br>
-      <input #picUrlAlert="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel>
+      <input #picUrlAlert="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel value="picUrl">
       <div *ngIf = "picUrlAlert.touched && picUrlAlert.invalid" class="alert alert-danger">Is empty</div>
     </div>
 
     <div class = "form-group">
       <label for="text">Text</label><br>
-      <input #textAlert="ngModel" required minlength="2" type="text" name="text" class="form-control" ngModel>
+      <input #textAlert="ngModel" required minlength="2" type="text" name="text" class="form-control" ngModel value="text">
       <div *ngIf = "textAlert.touched && textAlert.invalid" class="alert alert-danger">Is empty</div>
     </div>
     <button class = "btn btn-primary" type="submit">Submit</button>

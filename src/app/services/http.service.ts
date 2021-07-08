@@ -42,9 +42,17 @@ export class HttpService {
     }))
   }
 
-  addFanfic(body:String) {
+  addFanfic(body:NgForm) {
+    let name = body.value.name;
+    let author = body.value.author;
+    let fandom = body.value.fandom;
+    let genre = body.value.genre;
+    let picUrl = body.value.picUrl;
+    let text = body.value.text;
+
+
     this.http.post(`${env.BASE_URL}/addFanfic`,{
-      body
+      name, author, fandom, genre, picUrl, text
     }).toPromise().then((data:any) =>{console.log(data)})
 
   }
