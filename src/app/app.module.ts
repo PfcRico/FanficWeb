@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import {HttpHeadersInterceptor} from "./interceptors/http-headers.interceptor";
 import {HttpErrorsInterceptor} from "./interceptors/http-errors.interceptor";
 import { DetailsComponent } from './components/details/details.component';
+import { CommonModule } from '@angular/common';
 import { FanficTabsComponent } from './components/fanfic-tabs/fanfic-tabs.component';
 import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component';
 
@@ -38,6 +39,7 @@ import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    CommonModule
   ],
   providers: [
   ],

@@ -15,8 +15,4 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm){
-    this.router.navigate(['search',form.value.search])
-  }
-
 }

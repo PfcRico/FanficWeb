@@ -1,33 +1,106 @@
+<div class = "container">
+  <h1> Fanfic Addition Form</h1>
+  <form #adding="ngForm" (ngSubmit)="postData(adding)">
+    <div class = "form-group">
+      <label for="name">Fanfic Title</label><br>
+      <input #nameAlert = "ngModel" required minlength="2" type="text" name="name" class="form-control" ngModel>
+      <div *ngIf = "nameAlert.touched && nameAlert.invalid" class="alert alert-danger">Fanfic name is empty or too short
+      </div>
+    </div>
 
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript">
-</script>
+    <div class = "form-group">
+      <label for="author">Author</label><br>
+      <input #authorAlert="ngModel" required minlength="2" type="text" name="author" class="form-control" ngModel>
+      <div *ngIf = "authorAlert.touched && authorAlert.invalid" class="alert alert-danger">Author is empty or too short</div>
+    </div>
+
+    <div class = "form-group">
+      <label for="genre">Genre</label><br>
+      <input #genreAlert = "ngModel" required minlength="2" type="text" name="genre" class="form-control" ngModel>
+      <div *ngIf = "genreAlert.touched && genreAlert.invalid" class="alert alert-danger">Genre is empty</div>
+    </div>
+
+    <div class = "form-group">
+      <label for="fandom">Fandom</label><br>
+      <input #fandomAlert="ngModel" required minlength="2" type="text" name="fandom" class="form-control" ngModel>
+      <div *ngIf = "fandomAlert.touched && fandomAlert.invalid" class="alert alert-danger">Is empty</div>
+    </div>
+
+    <div class = "form-group">
+      <label for="picUrl">Picture URL</label><br>
+      <input #picUrlAlert="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel>
+      <div *ngIf = "picUrlAlert.touched && picUrlAlert.invalid" class="alert alert-danger">Is empty</div>
+    </div>
+
+    <div class = "form-group">
+      <label for="text">Text</label><br>
+      <input #textAlert="ngModel" required minlength="2" type="text" name="text" class="form-control" ngModel>
+      <div *ngIf = "textAlert.touched && textAlert.invalid" class="alert alert-danger">Is empty</div>
+    </div>
+    <button class = "btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
 
 <button id="upload_widget" class="cloudinary-button">Upload files</button>
 
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
 <script type="text/javascript">
+
   var myWidget = cloudinary.createUploadWidget({
-      cloudName: 'pfcricoby',
-      uploadPreset: 'jgdrsbhf'}, (error, result) => {
-      if (!error && result && result.event === "success") {
-        console.log(result.info.url);
-      }
-    }
-  )
+    cloudName: 'pfcricoby',
+    upload_preset: 'preset1',
+  }, (error, result) => { if (result.event == "success") {
+    console.log(result.info) // result.info contains data from upload
+  } })
 
   document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
+
 </script>
 
-<input type = "text" [(ngModel)]="name" placeholder="Name of fanfic">
-<input type = "text" [(ngModel)]="author" placeholder="Author">
-<input type = "text" [(ngModel)]="genre" placeholder="Genre of fanfic">
-<input type = "text" [(ngModel)]="picUrl" placeholder="URL for picture">
-<input type = "text" [(ngModel)]="fandom" placeholder="Fandom">
-<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">
-<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">
+<!--<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript">-->
+<!--</script>-->
 
-<button (click)="postData()">Post</button>
+<!--<button id="upload_widget" class="cloudinary-button">Upload files</button>-->
+
+<!--<script type="text/javascript">-->
+<!--  var myWidget = cloudinary.createUploadWidget({-->
+<!--      cloudName: 'pfcricoby',-->
+<!--      uploadPreset: 'jgdrsbhf'}, (error, result) => {-->
+<!--      if (!error && result && result.event === "success") {-->
+<!--        console.log(result.info.url);-->
+<!--      }-->
+<!--    }-->
+<!--  )-->
+
+<!--  document.getElementById("upload_widget").addEventListener("click", function(){-->
+<!--    myWidget.open();-->
+<!--  }, false);-->
+<!--</script>-->
+
+<!--<input type = "text" [(ngModel)]="name" placeholder="Name of fanfic">-->
+<!--<input type = "text" [(ngModel)]="author" placeholder="Author">-->
+<!--<input type = "text" [(ngModel)]="genre" placeholder="Genre of fanfic">-->
+<!--<input type = "text" [(ngModel)]="picUrl" placeholder="URL for picture">-->
+<!--<input type = "text" [(ngModel)]="fandom" placeholder="Fandom">-->
+<!--<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">-->
+<!--<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">-->
+
+<!--&lt;!&ndash;<button (click)="postData()">Post</button>&ndash;&gt;-->
+
+<!--<form class="example-form">-->
+<!--  <mat-form-field class="example-full-width" appearance="fill">-->
+<!--    <mat-label>Favorite food</mat-label>-->
+<!--    <input matInput placeholder="Ex. Pizza" value="Sushi">-->
+<!--  </mat-form-field>-->
+
+<!--  <mat-form-field class="example-full-width" appearance="fill">-->
+<!--    <mat-label>Leave a comment</mat-label>-->
+<!--    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>-->
+<!--  </mat-form-field>-->
+<!--</form>-->
 
 
 

@@ -1,11 +1,6 @@
 <div class = "search-container">
-  <form class = "search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+
     <span class="logo" routerLink="/">FanficWeb</span>
-    <input
-    class = "search-input"
-    name = "search"
-    ngModel
-    placeholder="Find fanfics"/>
-    <button class = "search-button">Search</button>
-  </form>
+    <button class = "search-button" routerLink="addFanfic">Add Fanfic</button>
+
 </div>

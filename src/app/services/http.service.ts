@@ -4,6 +4,8 @@ import {forkJoin, Observable} from "rxjs";
 import {environment as env} from 'src/environments/environment'
 import {APIResponse, Fanfic} from "../models";
 import {map} from "rxjs/operators";
+import {NgForm} from "@angular/forms";
+import {stringify} from "@angular/compiler/src/util";
 
 @Injectable({
   providedIn: 'root'
@@ -40,14 +42,9 @@ export class HttpService {
     }))
   }
 
-  addFanfic(name: string,
-            author: string,
-            fandom: string,
-            genre: string,
-            picUrl: string,
-            text: string) {
+  addFanfic(body:String) {
     this.http.post(`${env.BASE_URL}/addFanfic`,{
-      name, author, fandom, genre, text
+      body
     }).toPromise().then((data:any) =>{console.log(data)})
 
   }

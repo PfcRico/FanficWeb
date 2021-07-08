@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {HttpService} from "../../services/http.service";
+import {FormControl, NgForm, Validators} from "@angular/forms";
 
 
 @Component({
@@ -22,14 +23,14 @@ export class AddFanficComponent implements OnInit {
   // @ts-ignore
   picUrl: string;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService) {
+  }
 
   ngOnInit(): void {
   }
 
-  postData() {
+  postData(adding: NgForm) {
 
-    this.httpService.addFanfic(this.name,this.author,this.fandom, this.genre, this.picUrl, this.text)
-
+    this.httpService.addFanfic(JSON.stringify(adding.value))
   }
 }
