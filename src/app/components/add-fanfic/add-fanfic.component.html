@@ -29,7 +29,6 @@
     <div class = "form-group">
       <label for="picUrl">Picture URL</label><br>
       <input #picUrl="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel value="picUrl">
-
       <div *ngIf = "picUrl.touched && picUrl.invalid" class="alert alert-danger">Is empty</div>
     </div>
 
@@ -45,37 +44,15 @@
 
 <div id="direct_upload" ng2FileDrop [uploader]="uploader" (fileOver)="fileOverBase($event)" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
   <h1>Upload photo</h1>
-  <h2>File name is optional, we can use original one</h2>
-  <p>Drop your image here,</p>
-  <form>
-    <div class="form_line">
-      <label path="title">Image name:</label>
-      <div class="form_controls">
-        <input type="text" class="form-control" #title placeholder="Title" (keyup.enter)="updateTitle(title.value)" (blur)="updateTitle(title.value)"
-        />
-      </div>
-    </div>
-    <div class="form_line">
-      <label>Image:</label>
-      <div class="form_controls">
-        <div class="upload_button_holder">
-          <label class="upload_button" for="fileupload">Upload</label>
-          <!-- onChange hanlder resets the input value to get the change event when uploading the same file consecutively -->
-          <input type="file" id="fileupload" #fileInput ng2FileSelect [style.display]="'none'" [uploader]="uploader" (change)="fileInput.value=''"
-                 multiple />
-        </div>
-
-      </div>
-    </div>
-  </form>
-  <h2>Here will be status of your upload</h2>
+  <p>Drop your image here!</p>
+  <h2>Upload Status</h2>
   <div class="file" *ngFor="let response of responses; let i = index">
     <h3>{{response.file.name}}</h3>
-    <button class="delete-image" *ngIf="!!response.data.delete_token" (click)="deleteImage(response.data, i)">Delete image</button>
     <div class="status">
       Uploading... {{response.progress}}%
       <div *ngIf="!response.status">In progress</div>
-      <div class="status-code" *ngIf="response.status">Upload completed with status code {{response.status}}</div>
+      <div class="status-code" *ngIf="response.status">Upload completed! Please copy URL to Picture URL in the form</div>
+
     </div>
     <div class="progress-bar">
       <div class="progress" role="progressbar" [style.width.%]="response.progress"></div>
@@ -83,8 +60,7 @@
     <div class="form_line">
     </div>
     <div class="info">
-      <p class="fanfic-header-genre">
-        <span>{{response.data.url}}</span>
+      <p class="fanfic-header-genre">{{response.data.url}}
       </p>
     </div>
   </div>

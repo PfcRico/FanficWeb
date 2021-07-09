@@ -23,6 +23,8 @@ export class AddFanficComponent implements OnInit {
   // @ts-ignore
   private title: string;
 
+  @Input() picUrlToSend?: string;
+
   constructor(
     private cloudinary: Cloudinary,
     private zone: NgZone,
@@ -109,7 +111,7 @@ export class AddFanficComponent implements OnInit {
         {
           file: item.file,
           status,
-          data: JSON.parse(response)
+          data: JSON.parse(response),
         }
       );
 
@@ -163,6 +165,7 @@ export class AddFanficComponent implements OnInit {
 
 
   postData(adding: NgForm) {
-    this.httpService.addFanfic(adding)
+    console.log(this.getFileProperties(this.responses))
+    //this.httpService.addFanfic(adding)
   }
 }
