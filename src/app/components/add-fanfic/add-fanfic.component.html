@@ -28,8 +28,9 @@
 
     <div class = "form-group">
       <label for="picUrl">Picture URL</label><br>
-      <input #picUrlAlert="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel value="picUrl">
-      <div *ngIf = "picUrlAlert.touched && picUrlAlert.invalid" class="alert alert-danger">Is empty</div>
+      <input #picUrl="ngModel" required minlength="2" type="text" name="picUrl" class="form-control" ngModel value="picUrl">
+
+      <div *ngIf = "picUrl.touched && picUrl.invalid" class="alert alert-danger">Is empty</div>
     </div>
 
     <div class = "form-group">
@@ -41,66 +42,53 @@
   </form>
 </div>
 
-<button id="upload_widget" class="cloudinary-button">Upload files</button>
 
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<div id="direct_upload" ng2FileDrop [uploader]="uploader" (fileOver)="fileOverBase($event)" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
+  <h1>Upload photo</h1>
+  <h2>File name is optional, we can use original one</h2>
+  <p>Drop your image here,</p>
+  <form>
+    <div class="form_line">
+      <label path="title">Image name:</label>
+      <div class="form_controls">
+        <input type="text" class="form-control" #title placeholder="Title" (keyup.enter)="updateTitle(title.value)" (blur)="updateTitle(title.value)"
+        />
+      </div>
+    </div>
+    <div class="form_line">
+      <label>Image:</label>
+      <div class="form_controls">
+        <div class="upload_button_holder">
+          <label class="upload_button" for="fileupload">Upload</label>
+          <!-- onChange hanlder resets the input value to get the change event when uploading the same file consecutively -->
+          <input type="file" id="fileupload" #fileInput ng2FileSelect [style.display]="'none'" [uploader]="uploader" (change)="fileInput.value=''"
+                 multiple />
+        </div>
 
-<script type="text/javascript">
-
-  var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'pfcricoby',
-    upload_preset: 'preset1',
-  }, (error, result) => { if (result.event == "success") {
-    console.log(result.info) // result.info contains data from upload
-  } })
-
-  document.getElementById("upload_widget").addEventListener("click", function(){
-    myWidget.open();
-  }, false);
-
-</script>
-
-<!--<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript">-->
-<!--</script>-->
-
-<!--<button id="upload_widget" class="cloudinary-button">Upload files</button>-->
-
-<!--<script type="text/javascript">-->
-<!--  var myWidget = cloudinary.createUploadWidget({-->
-<!--      cloudName: 'pfcricoby',-->
-<!--      uploadPreset: 'jgdrsbhf'}, (error, result) => {-->
-<!--      if (!error && result && result.event === "success") {-->
-<!--        console.log(result.info.url);-->
-<!--      }-->
-<!--    }-->
-<!--  )-->
-
-<!--  document.getElementById("upload_widget").addEventListener("click", function(){-->
-<!--    myWidget.open();-->
-<!--  }, false);-->
-<!--</script>-->
-
-<!--<input type = "text" [(ngModel)]="name" placeholder="Name of fanfic">-->
-<!--<input type = "text" [(ngModel)]="author" placeholder="Author">-->
-<!--<input type = "text" [(ngModel)]="genre" placeholder="Genre of fanfic">-->
-<!--<input type = "text" [(ngModel)]="picUrl" placeholder="URL for picture">-->
-<!--<input type = "text" [(ngModel)]="fandom" placeholder="Fandom">-->
-<!--<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">-->
-<!--<input type = "text" [(ngModel)]="text" placeholder="text of fanfic">-->
-
-<!--&lt;!&ndash;<button (click)="postData()">Post</button>&ndash;&gt;-->
-
-<!--<form class="example-form">-->
-<!--  <mat-form-field class="example-full-width" appearance="fill">-->
-<!--    <mat-label>Favorite food</mat-label>-->
-<!--    <input matInput placeholder="Ex. Pizza" value="Sushi">-->
-<!--  </mat-form-field>-->
-
-<!--  <mat-form-field class="example-full-width" appearance="fill">-->
-<!--    <mat-label>Leave a comment</mat-label>-->
-<!--    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>-->
-<!--  </mat-form-field>-->
-<!--</form>-->
+      </div>
+    </div>
+  </form>
+  <h2>Here will be status of your upload</h2>
+  <div class="file" *ngFor="let response of responses; let i = index">
+    <h3>{{response.file.name}}</h3>
+    <button class="delete-image" *ngIf="!!response.data.delete_token" (click)="deleteImage(response.data, i)">Delete image</button>
+    <div class="status">
+      Uploading... {{response.progress}}%
+      <div *ngIf="!response.status">In progress</div>
+      <div class="status-code" *ngIf="response.status">Upload completed with status code {{response.status}}</div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" role="progressbar" [style.width.%]="response.progress"></div>
+    </div>
+    <div class="form_line">
+    </div>
+    <div class="info">
+      <p class="fanfic-header-genre">
+        <span>{{response.data.url}}</span>
+      </p>
+    </div>
+  </div>
+</div>
 
 
 

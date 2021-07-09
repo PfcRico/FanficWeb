@@ -18,7 +18,15 @@ import { DetailsComponent } from './components/details/details.component';
 import { CommonModule } from '@angular/common';
 import { FanficTabsComponent } from './components/fanfic-tabs/fanfic-tabs.component';
 import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component';
+import {FileUploadModule} from "ng2-file-upload";
+import {CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@cloudinary/angular-5.x';
+import * as cloudinary from 'cloudinary-core';
 
+
+
+
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +47,17 @@ import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    CommonModule
+    CommonModule,
+    FileUploadModule,
+    CloudinaryModule.forRoot(cloudinary, {
+      cloud_name: 'pfcricoby',
+      secure: true,
+      upload_preset: 'jgdrsbhf',
+      //@ts-ignore
+      private_cdn: true,
+      cname: 'mycompany.images.com'
+    })
+
   ],
   providers: [
   ],
