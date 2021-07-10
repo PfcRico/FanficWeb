@@ -165,7 +165,7 @@ export class AddFanficComponent implements OnInit {
 
 
   postData(adding: NgForm) {
-    console.log(this.getFileProperties(this.responses))
-    //this.httpService.addFanfic(adding)
+
+    this.httpService.addFanfic(adding)
   }
 }

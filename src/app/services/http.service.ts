@@ -42,6 +42,14 @@ export class HttpService {
     }))
   }
 
+
+  updateRating(id: number, rating:number) {
+    this.http.post(`${env.BASE_URL}/updateId/`,{
+      id, rating
+    }).toPromise().then((data:any) =>{console.log(data)})
+
+  }
+
   addFanfic(body:NgForm) {
     let name = body.value.name;
     let author = body.value.author;

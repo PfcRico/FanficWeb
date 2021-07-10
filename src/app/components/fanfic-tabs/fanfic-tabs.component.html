@@ -8,6 +8,12 @@
       <p class="fanfic-tabs-par">
         Short Description Here
         <span>Really interesting story</span>
+        <button mat-icon-button color="accent" *ngFor="let r of ratingArr; index as i"
+                (click)="onClick(i)">
+          <mat-icon>
+            {{ returnStar(i) }}
+          </mat-icon>
+        </button>
       </p>
       <p class = "fanfic-tabs-votes">
         <span>

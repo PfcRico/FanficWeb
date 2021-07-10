@@ -21,6 +21,8 @@ import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component
 import {FileUploadModule} from "ng2-file-upload";
 import {CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@cloudinary/angular-5.x';
 import * as cloudinary from 'cloudinary-core';
+import {MatButtonModule} from "@angular/material/button";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -29,6 +31,7 @@ import * as cloudinary from 'cloudinary-core';
 // @ts-ignore
 @NgModule({
   declarations: [
+
     AppComponent,
     SearchBarComponent,
     HomeComponent,
@@ -36,29 +39,32 @@ import * as cloudinary from 'cloudinary-core';
     FanficTabsComponent,
     AddFanficComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    GaugeModule.forRoot(),
-    MatTabsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    CommonModule,
-    FileUploadModule,
-    CloudinaryModule.forRoot(cloudinary, {
-      cloud_name: 'pfcricoby',
-      secure: true,
-      upload_preset: 'jgdrsbhf',
-      //@ts-ignore
-      private_cdn: true,
-      cname: 'mycompany.images.com'
-    })
+    imports: [
+      MatSnackBarModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpClientModule,
+        GaugeModule.forRoot(),
+        MatTabsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        CommonModule,
+        FileUploadModule,
+        CloudinaryModule.forRoot(cloudinary, {
+            cloud_name: 'pfcricoby',
+            secure: true,
+            upload_preset: 'jgdrsbhf',
+            //@ts-ignore
+            private_cdn: true,
+            cname: 'mycompany.images.com'
+        }),
+        MatButtonModule,
 
-  ],
+
+    ],
   providers: [
   ],
   bootstrap: [AppComponent]
