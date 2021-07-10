@@ -1,6 +1,25 @@
-<div class = "search-container">
+<div class="search-container">
 
-    <span class="logo" routerLink="/">FanficWeb</span>
-    <button class = "search-button" routerLink="addFanfic">Add Fanfic</button>
+  <span class="logo" routerLink="/">FanficWeb</span>
+
+  <div *ngIf="showAdminBoard">
+    <button class="search-button" routerLink="admin">Admin Board</button>
+    <button class="search-button" routerLink="addFanfic">Add Fanfic</button>
+  </div>
+  <div *ngIf="showModeratorBoard">
+    <button class="search-button" routerLink="mod">Moderator Board</button>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <button class="search-button" routerLink="user">User Board</button>
+  </div>
+  <div *ngIf="!isLoggedIn">
+    <button class="search-button" routerLink="register">Register</button>
+    <button class="search-button" routerLink="login">Login</button>
+  </div>
+
+  <div *ngIf="isLoggedIn">
+    <button class="search-button" routerLink="profile">{{ username }}</button>
+    <button class="search-button" (click)="logout()">LogOut</button>
+  </div>
 
 </div>

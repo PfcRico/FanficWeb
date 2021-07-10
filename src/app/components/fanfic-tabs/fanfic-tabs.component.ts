@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Fanfic} from "../../models";
-import {HttpService} from "../../services/http.service";
+import {HttpService} from "../../_services/http.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 

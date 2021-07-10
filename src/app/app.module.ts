@@ -23,9 +23,13 @@ import {CloudinaryModule, CloudinaryConfiguration, provideCloudinary} from '@clo
 import * as cloudinary from 'cloudinary-core';
 import {MatButtonModule} from "@angular/material/button";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
-
-
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './components/board-user/board-user.component';
+import {authInterceptorProviders} from './_helpers/auth.interceptor';
 
 // @ts-ignore
 // @ts-ignore
@@ -37,7 +41,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     DetailsComponent,
     FanficTabsComponent,
-    AddFanficComponent
+    AddFanficComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent
   ],
     imports: [
       MatSnackBarModule,
@@ -65,8 +75,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
     ],
-  providers: [
-  ],
+  providers: [authInterceptorProviders],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

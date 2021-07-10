@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Fanfic} from "../../models";
 import {Subscription} from "rxjs";
-import {HttpService} from "../../services/http.service";
+import {HttpService} from "../../_services/http.service";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({

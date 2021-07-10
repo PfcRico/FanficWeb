@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {APIResponse, Fanfic} from "../../models";
-import {HttpService} from "../../services/http.service";
+import {HttpService} from "../../_services/http.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 

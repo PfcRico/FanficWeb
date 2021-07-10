@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, NgZone} from '@angular/core';
-import {HttpService} from "../../services/http.service";
+import {HttpService} from "../../_services/http.service";
 import {FileUploader, FileUploaderOptions, ParsedResponseHeaders} from 'ng2-file-upload';
 import {Cloudinary} from '@cloudinary/angular-5.x';
 import {NgForm} from "@angular/forms";
