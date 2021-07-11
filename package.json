@@ -26,6 +26,7 @@
     "@angular/router": "~12.0.5",
     "@cloudinary/angular-5.x": "^1.4.2",
     "angular-gauge": "^4.0.0",
+    "cloudinary-core": "^2.11.4",
     "express": "^4.17.1",
     "ng2-file-upload": "^1.4.0",
     "ngx-disqus": "^2.4.3",

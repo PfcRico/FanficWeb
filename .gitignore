@@ -43,3 +43,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/bower_components/angular/README.md
+/bower_components/cloudinary-core/README.md
+/bower_components/cloudinary_ng/README.md
