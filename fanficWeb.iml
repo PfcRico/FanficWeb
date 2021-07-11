@@ -8,8 +8,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="all" level="application" />
-    <orderEntry type="library" name="@types/cloudinary-uploadwidget-browser" level="application" />
-    <orderEntry type="library" name="uploadcare.full" level="application" />
   </component>
 </module>

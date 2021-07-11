@@ -59,7 +59,7 @@ export class HttpService {
     let text = body.value.text;
 
 
-    this.http.post(`${env.BASE_URL}/addFanfic`,{
+    this.http.post(`${env.BASE_URL}/api/auth/addFanfic/`,{
       name, author, fandom, genre, picUrl, text
     }).toPromise().then((data:any) =>{console.log(data)})
 

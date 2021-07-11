@@ -30,6 +30,12 @@
         <span>{{fanfic.text}}</span>
       </p>
     </mat-tab>
-    <mat-tab label = "Comments"></mat-tab>
+    <mat-tab label = "Comments">
+      <disqus [id] = [fanfic.id]></disqus>
+      <disqus [identifier]="'pageUrl'" >
+      </disqus>
+
+    </mat-tab>
+
   </mat-tab-group>
 </div>

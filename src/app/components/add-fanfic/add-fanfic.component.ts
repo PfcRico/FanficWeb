@@ -35,6 +35,7 @@ export class AddFanficComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     // Create the file uploader, wire it to upload to your account
     const uploaderOptions: FileUploaderOptions = {
       url: `https://api.cloudinary.com/v1_1/pfcricoby/upload`,
@@ -124,6 +125,8 @@ export class AddFanficComponent implements OnInit {
           data: {}
         }
       );
+
+
   }
 
   updateTitle(value: string) {
