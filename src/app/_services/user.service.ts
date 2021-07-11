@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = 'https://fanfic-backend.herokuapp.com';
+const API_URL = 'https://fanfic-backend.herokuapp.com/api/auth/';
 
 @Injectable({
   providedIn: 'root'
