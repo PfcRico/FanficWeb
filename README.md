@@ -1,27 +1,21 @@
 # FanficWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+Небольшой проект для чтения фанфиков в интернете. Реализован скелет приложения и стоит добавить много маленьких фишечек для полоценного продукта.
+Очень интересный первый опыт с Ангуляром.
+# Запуск
 
-## Development server
+Скачать проект, для работы с локальным сервером в `_service` и `enviroments` заменить адреса `API` на адрес вашего бэкенда.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Что было использовано
 
-## Code scaffolding
+1. [Angular](https://angular.io) - фреймворк для создания страницы
+2. [Disqus](https://disqus.com) - сервис комментариев. Очень удобный
+3. [Cloudinary](https://cloudinary.com) - сервис для загрузки фотографий.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Скриншоты
 
-## Build
+![img](http://res.cloudinary.com/pfcricoby/image/upload/v1626097739/angular_sample/umwhu5s3wty6czzmgqgv.png)
+![img](http://res.cloudinary.com/pfcricoby/image/upload/v1626097947/angular_sample/td7eed6ymkvsppvlobjl.png)
+![img](http://res.cloudinary.com/pfcricoby/image/upload/v1626097977/angular_sample/bn545j5ign4wsepf5xsq.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
