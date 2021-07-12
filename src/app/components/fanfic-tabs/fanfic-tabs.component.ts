@@ -82,7 +82,7 @@ export class AnyComponent {
 
   @Input() id = 1;
 
-  pageId = '/details/';
+  pageId = this.id.toString();
   pageUrl = this.pageId + '/' + this.id;
 
 }
